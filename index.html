@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Travis Fulton</title>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" charset="utf-8">
+		
+		$(function() {
+			/*
+			CSS Browser Selector v0.3.5 (Feb 05, 2010)
+			http://rafael.adm.br/css_browser_selector
+			License: http://creativecommons.org/licenses/by/2.5/
+			*/
+			function css_browser_selector(u){var ua = u.toLowerCase(),is=function(t){return ua.indexOf(t)>-1;},g='gecko',w='webkit',s='safari',o='opera',h=document.documentElement,b=[(!(/opera|webtv/i.test(ua))&&/msie\s(\d)/.test(ua))?('ie ie'+RegExp.$1):is('firefox/2')?g+' ff2':is('firefox/3.5')?g+' ff3 ff3_5':is('firefox/3')?g+' ff3':is('gecko/')?g:is('opera')?o+(/version\/(\d+)/.test(ua)?' '+o+RegExp.$1:(/opera(\s|\/)(\d+)/.test(ua)?' '+o+RegExp.$2:'')):is('konqueror')?'konqueror':is('chrome')?w+' chrome':is('iron')?w+' iron':is('applewebkit/')?w+' '+s+(/version\/(\d+)/.test(ua)?' '+s+RegExp.$1:''):is('mozilla/')?g:'',is('j2me')?'mobile':is('iphone')?'iphone':is('ipod')?'ipod':is('mac')?'mac':is('darwin')?'mac':is('webtv')?'webtv':is('win')?'win':is('freebsd')?'freebsd':(is('x11')||is('linux'))?'linux':'','js']; c = b.join(' '); h.className += ' '+c; return c;}; css_browser_selector(navigator.userAgent);
+	
+		});
+		
+	</script>
+
+	
+	<link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+	
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style type="text/css" media="screen">
+	html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }
+	body { line-height:1; }
+	ol,ul { list-style:none; }
+	blockquote,q { quotes:none; }
+	blockquote:before,blockquote:after,q:before,q:after { content:""; content:none; }
+	:focus { outline:0; }
+	ins { text-decoration:none; }
+	del { text-decoration:line-through; }
+	table { border-collapse:collapse; border-spacing:0; }
+
+	/* positioniseverything clearfix */
+	.clearfix:after { visibility:hidden; display:block; font-size:0; content:" "; clear:both; height:0;}
+	* html .clearfix { zoom: 1; } /* IE6 */
+	*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+	
+		body {
+			background: #eac193 url('noise.png') repeat;			
+		}
+		
+		#content {
+			position:relative;
+			width:500px;
+			margin:100px auto;
+		}
+		
+		#pin {
+			position:absolute;
+			top: -64px;
+			left: 244px;
+			width:15px;
+			height:15px;
+			background-color:transparent;
+			border-width:1px;
+			border-color:#999999;
+			-moz-border-radius:15px;
+			-webkit-border-radius:15px;
+			border-radius:15px;
+			-moz-box-shadow:1px 1px 1px #000000;
+			-webkit-box-shadow:1px 1px 1px #000000;
+			box-shadow:1px 1px 1px #000000;
+			filter: progid:DXImageTransform.Microsoft.Shadow(strength=1, direction=135, color='#000000');
+			-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=1, Direction=135, Color='#000000')";
+			background-image: -moz-linear-gradient(top, #f1f1f1, #999999);
+			background-image: -webkit-gradient(linear, center top, center bottom, from(#f1f1f1), to(#999999));
+			background-image: -o-linear-gradient(top, #f1f1f1, #999999);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1f1f1', endColorstr='#999999');
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1f1f1', endColorstr='#999999')";
+			background-image: linear-gradient(top, #f1f1f1, #999999);
+			-moz-background-clip: padding-box;
+			-webkit-background-clip: padding-box;
+			background-clip: padding-box;
+			z-index: 1002;		
+		}
+		
+		.ie #pin {
+			display:none;
+		}
+		
+		#string {
+			position:relative;
+			top: 0;
+			left: 100px;
+			width: 300px;
+			height: 300px;
+			border-top:2px solid #4b2d0c;
+			border-left:2px solid #4b2d0c;
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			transform:rotate(45deg);
+			z-index: 100;
+			-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+			border-radius:10px;
+			background:transparent;			
+		}
+		
+		#sign {
+			position:absolute;
+			top:0;
+			left:0;		
+			-moz-box-shadow:1px 1px 1px #000000;
+			-webkit-box-shadow:1px 1px 4px #000000;
+			box-shadow:1px 1px 4px #000000;
+			border:10px solid #834c0e;
+			-moz-border-radius:5px;
+			-webkit-border-radius:5px;
+			border-radius:5px;
+			height:320px;
+			width:500px;
+			background-image: -moz-linear-gradient(top, #f7ede1, #e3dacf);
+			background-image: -webkit-gradient(linear, center top, center bottom, from(#f7ede1), to(#e3dacf));
+			background-image: -o-linear-gradient(top, #f7ede1, #e3dacf);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7ede1', endColorstr='#e3dacf');
+			z-index: 1001;	
+			text-align:center;		
+		}
+		
+		.ie #sign {
+			border-radius:0;
+		}
+		
+		#sign_string {
+		-webkit-animation: cssAnimation 1.5s 1 ease-in-out;
+		-moz-animation: cssAnimation 1.5s 1 ease-in-out;
+		-ms-animation: cssAnimation 1.5s 1 ease-in-out;
+		animation: cssAnimation 1.5s 1 ease-in-out;
+		}
+		
+		@-webkit-keyframes cssAnimation {
+			0% { -webkit-transform: rotate(10deg) translate(-40px); }		
+			25% { -webkit-transform: rotate(-10deg) translate(40px); }
+			75% { -webkit-transform: rotate(5deg) translate(-20px); }		
+			100% { -webkit-transform: rotate(0deg) translate(0px); }
+		}
+		
+		@-moz-keyframes cssAnimation {
+			0% { -moz-transform: rotate(10deg) translate(-40px); }		
+			25% { -moz-transform: rotate(-10deg) translate(40px); }
+			75% { -moz-transform: rotate(5deg) translate(-20px); }		
+			100% { -moz-transform: rotate(0deg) translate(0px); }
+		}
+		
+		@-ms-keyframes cssAnimation {
+			0% { -ms-transform: rotate(10deg) translate(-40px); }		
+			25% { -ms-transform: rotate(-10deg) translate(40px); }
+			75% { -ms-transform: rotate(5deg) translate(-20px); }		
+			100% { -ms-transform: rotate(0deg) translate(0px); }
+		}
+		
+		@keyframes cssAnimation {
+			0% { transform: rotate(10deg) translate(-40px); }		
+			25% { transform: rotate(-10deg) translate(40px); }
+			75% { transform: rotate(5deg) translate(-20px); }		
+			100% { transform: rotate(0deg) translate(0px); }
+		}	
+		
+		#sign h1 {
+			font-family: 'Changa One', Helvetica, san-serif;
+			font-size: 200px;
+			color: #f4970b;
+			text-shadow: #fff 1px 1px 0;
+		}
+		
+		.ie #sign h1 {
+			text-shadow:none;
+		} 
+		
+		#sign p {
+			font-family: 'Josefin Slab', serif;
+			font-size: 18px;
+			color:#333;
+		}
+		
+		#sign #tee {
+			margin-top: 30px;
+			font-size: 50px;
+			text-shadow: #fff 1px 1px 0;
+			color: #71420c;
+		}
+		
+		#sign a {
+			text-decoration:none;
+			font-weight:bold;
+			color:#333;
+		}
+		
+		#inner {
+			border-top:1px solid #412506;
+			border-left:1px solid #412506;
+			height:100%;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="content">
+		<div id="pin"></div>
+		<div id="sign_string">
+			<div id="string"></div>
+			<div id="sign">
+				<div id="inner">
+					<h1>BRB</h1>
+					<p>In the meantime, drop me a line at lorem <a href="mailto:&#x74;&#x72;&#x61;&#x76;&#x69;&#x73;&#x40;&#x74;&#x66;&#x75;&#x6C;&#x74;&#x6F;&#x6E;&#x2E;&#x6E;&#x65;&#x74;">&#x74;&#x72;&#x61;&#x76;&#x69;&#x73;&#x40;&#x74;&#x66;&#x75;&#x6C;&#x74;&#x6F;&#x6E;&#x2E;&#x6E;&#x65;&#x74;</a></p>
+					<p id="tee"> &#x24E3;</p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>
+
+
